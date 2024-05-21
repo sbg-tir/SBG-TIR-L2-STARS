@@ -1,4 +1,4 @@
-# SBG-TIR OTTER STARS Data Fusion System
+# SBG-TIR OTTER LST STARS NDVI & Albedo Product
 
 Gregory H. Halverson (they/them)<br>
 [gregory.h.halverson@jpl.nasa.gov](mailto:gregory.h.halverson@jpl.nasa.gov)<br>
