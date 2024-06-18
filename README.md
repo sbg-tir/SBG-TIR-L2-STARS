@@ -4,7 +4,7 @@
 [gregory.h.halverson@jpl.nasa.gov](mailto:gregory.h.halverson@jpl.nasa.gov)<br>
 NASA Jet Propulsion Laboratory 329G
 
-Margaret C. Johnson (she/her)<br>
+[Margaret C. Johnson](https://github.com/majohnso) (she/her)<br>
 [maggie.johnson@jpl.nasa.gov](mailto:maggie.johnson@jpl.nasa.gov)<br>
 NASA Jet Propulsion Laboratory 398L
 
