@@ -146,10 +146,10 @@ Operationally, each L2T STARS tile run loads the means and covariances of the ST
 
 | **Name** | **Description** | **Type** | **Units** | **Fill Value** | **No Data Value** | **Valid Min** | **Valid Max** |**Scale Factor** | **Size** |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | -- |
-| NDVI | Normalized Difference Vegetation Index | float32 | Index | NaN | N/A | -1 | 1 | N/A | 12.06 mb |
-| NDVI-UQ | Normalized Difference Vegetation Index Uncertainty | float32 | Index | NaN | N/A | -1 | 1 | N/A | 12.06 mb |
-| albedo | Albedo | float32 | Ratio | NaN | N/A | 0 | 1 | N/A | 12.06 mb |
-| albedo-UQ | Albedo Uncertainty | float32 | Ratio | NaN | N/A | 0 | 1 | N/A | 12.06 mb |
+| NDVI | Normalized Difference Vegetation Index | float32 | Index | NaN | N/A | -1 | 1 | N/A | 13.4 mb |
+| NDVI-UQ | Normalized Difference Vegetation Index Uncertainty | float32 | Index | NaN | N/A | -1 | 1 | N/A | 13.4 mb |
+| albedo | Albedo | float32 | Ratio | NaN | N/A | 0 | 1 | N/A | 13.4 mb |
+| albedo-UQ | Albedo Uncertainty | float32 | Ratio | NaN | N/A | 0 | 1 | N/A | 13.4 mb |
 
 *Table 2. Listing of L2T STARS data layers.*
 
