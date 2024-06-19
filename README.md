@@ -102,7 +102,16 @@ flowchart TB
     VNP43_BRDF --> VIIRS_corrected
     VIIRS_corrected --> VIIRS_NDVI
     VIIRS_corrected --> VIIRS_albedo
-    
+
+    Landsat_reflectance --> Landsat_upsampled
+    Sentinel_reflectance --> Sentinel_upsampled
+
+    Landsat_upsampled --> Landsat_NDVI
+    Sentinel_upsampled --> Sentinel_NDVI
+
+    Landsat_upsampled --> Landsat_albedo
+    Sentinel_upsampled --> Sentinel_albedo
+
     VIREO_upsampled --> fine_NDVI_input
     Landsat_NDVI --> fine_NDVI_input
     Sentinel_NDVI --> fine_NDVI_input
