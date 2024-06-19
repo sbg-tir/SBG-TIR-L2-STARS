@@ -58,6 +58,71 @@ The SBG products are available at the NASA Land Processes Distribution Active Ar
 
 ## L2T STARS NDVI and Albedo Product
 
+```mermaid
+flowchart TB
+    VNP09GA_I[VNP09GA I-Band 500m Surface Reflectance]
+    VNP09GA_M[VNP09GA M-Band 1000m Surface Reflectance]
+    VIIRS_downscaling[VIIRS Downscaling]
+    VNP09GA_downscaled[Downscaled 500m VIIRS Surface Reflectance]
+    VNP43_BRDF[VNP43 BRDF Correction]
+    VIIRS_corrected[VIIRS BRDF-Corrected 500m Surface Reflectance]
+    VIIRS_NDVI[VIIRS 500m NDVI]
+    VIIRS_albedo[VIIRS 500m Albedo]
+    VIREO_NDVI[SBG-TIR VIREO 30m NDVI]
+
+    Landsat_NDVI[Landsat 30m NDVI]
+    Sentinel_NDVI[Sentinel 30m NDVI]
+    fine_NDVI_input[NDVI 30m Composite]
+    NDVI_covariance_prior[NDVI Fine-Coarse Covariance Prior from Previous Overpass]
+    NDVI_covariance_posterior[NDVI Fine-Coarse Covariance Posterior for Next Overpass]
+    NDVI_data_fusion[NDVI Data Fusion]
+    fine_NDVI_output[Fused 30m NDVI]
+    fine_NDVI_uncertainty[NDVI Uncertainty]
+
+    Landsat_albedo[Landsat 30m Albedo]
+    Sentinel_albedo[Sentinel 30m Albedo]
+    fine_albedo_input[Albedo 30m Composite]
+    albedo_covariance_prior[Albedo Fine-Coarse Covariance Prior from Previous Overpass]
+    albedo_covariance_posterior[Albedo Fine-Coarse Covariance Posterior for Next Overpass]
+    albedo_data_fusion[Albedo Data Fusion]
+    fine_albedo_output[Fused 30m Albedo]
+    fine_albedo_uncertainty[Albedo Uncertainty]
+
+    SBG_L2T_STARS[SBG-TIR OTTER L2T STARS NDVI & Albedo Product]
+    
+    VNP09GA_I --> VIIRS_downscaling
+    VNP09GA_M --> VIIRS_downscaling
+    VIIRS_downscaling --> VNP09GA_downscaled
+    VNP09GA_downscaled --> VNP43_BRDF
+    VNP43_BRDF --> VIIRS_corrected
+    VIIRS_corrected --> VIIRS_NDVI
+    VIIRS_corrected --> VIIRS_albedo
+    
+    VIREO_NDVI --> fine_NDVI_input
+    Landsat_NDVI --> fine_NDVI_input
+    Sentinel_NDVI --> fine_NDVI_input
+    fine_NDVI_input --> NDVI_data_fusion
+    VIIRS_NDVI --> NDVI_data_fusion
+    NDVI_covariance_prior --> NDVI_data_fusion
+    NDVI_data_fusion --> fine_NDVI_output
+    NDVI_data_fusion --> fine_NDVI_uncertainty
+    NDVI_data_fusion --> NDVI_covariance_posterior
+
+    Landsat_albedo --> fine_albedo_input
+    Sentinel_albedo --> fine_albedo_input
+    fine_albedo_input --> albedo_data_fusion
+    VIIRS_albedo --> albedo_data_fusion
+    albedo_covariance_prior --> albedo_data_fusion
+    albedo_data_fusion --> fine_albedo_output
+    albedo_data_fusion --> fine_albedo_uncertainty
+    albedo_data_fusion --> albedo_covariance_posterior
+
+    fine_NDVI_output --> SBG_L2T_STARS
+    fine_NDVI_uncertainty --> SBG_L2T_STARS
+    fine_albedo_output --> SBG_L2T_STARS
+    fine_albedo_uncertainty --> SBG_L2T_STARS
+```
+
 NDVI and albedo are estimated at 60 m SBG standard resolution for each daytime SBG overpass by fusing temporally sparse but fine spatial resolution images from the Harmonized Landsat Sentinel (HLS) 2.0 product with daily, moderate spatial resolution images from the Suomi NPP Visible Infrared Imaging Radiometer Suite (VIIRS) VNP09GA product. The data fusion is performed using a variant of the Spatial Timeseries for Automated high-Resolution multi-Sensor data fusion (STARS) algorithm developed by Dr. Margaret Johnson and Gregory Halverson at the Jet Propulsion Laboratory. STARS is a Bayesian timeseries methodology that provides streaming data fusion and uncertainty quantification through efficient Kalman filtering. 
 
 Operationally, each L2T STARS tile run loads the means and covariances of the STARS model saved from the most recent tile run, then iteratively advances the means and covariances forward each day updating with fine imagery from HLS and/or moderate resolution imagery from VIIRS up to the day of the target SBG overpass. A pixelwise, lagged 16-day implementation of the VNP43 algorithm (Schaaf, 2017) is used for a near-real-time BRDF correction on the VNP09GA products to produce VIIRS NDVI and albedo. 
