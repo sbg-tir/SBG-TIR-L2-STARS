@@ -76,7 +76,7 @@ flowchart TB
     Landsat_upsampled[Upsampled Landsat 60m Surface Reflectance]
     Landsat_NDVI[Landsat 60m NDVI]
     Sentinel_reflectance[HLS Sentinel 30m Surface Reflectance]
-    Sentenel_upsampled[Upsampled Sentinel 60m Surface Reflectance]
+    Sentinel_upsampled[Upsampled Sentinel 60m Surface Reflectance]
     Sentinel_NDVI[Sentinel 60m NDVI]
     fine_NDVI_input[NDVI 60m Composite]
     NDVI_covariance_prior[NDVI Fine-Coarse Covariance Prior from Previous Overpass]
