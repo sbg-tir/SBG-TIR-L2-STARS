@@ -68,6 +68,7 @@ flowchart TB
     VIIRS_corrected[VIIRS BRDF-Corrected 500m Surface Reflectance]
     VIIRS_NDVI[VIIRS 500m NDVI]
     VIIRS_albedo[VIIRS 500m Albedo]
+
     VIREO_NDVI[SBG-TIR VIREO 30m NDVI]
     VIREO_upsampled[Upsampled VIREO 60m NDVI]
 
@@ -103,6 +104,7 @@ flowchart TB
     VIIRS_corrected --> VIIRS_NDVI
     VIIRS_corrected --> VIIRS_albedo
 
+    VIREO_NDVI --> VIREO_upsampled
     Landsat_reflectance --> Landsat_upsampled
     Sentinel_reflectance --> Sentinel_upsampled
 
