@@ -60,6 +60,9 @@ The SBG products are available at the NASA Land Processes Distribution Active Ar
 
 ```mermaid
 flowchart TB
+    VIREO_NDVI(SBG-TIR VIREO 30m NDVI)
+    VIREO_upsampled[Upsampled VIREO 60m NDVI]
+
     VNP09GA_I[VNP09GA I-Band 500m Surface Reflectance]
     VNP09GA_M[VNP09GA M-Band 1000m Surface Reflectance]
     VIIRS_downscaling[VIIRS Downscaling]
@@ -68,9 +71,6 @@ flowchart TB
     VIIRS_corrected[VIIRS BRDF-Corrected 500m Surface Reflectance]
     VIIRS_NDVI[VIIRS 500m NDVI]
     VIIRS_albedo[VIIRS 500m Albedo]
-
-    VIREO_NDVI[SBG-TIR VIREO 30m NDVI]
-    VIREO_upsampled[Upsampled VIREO 60m NDVI]
 
     Landsat_reflectance[HLS Landsat 30m Surface Reflectance]
     Landsat_upsampled[Upsampled Landsat 60m Surface Reflectance]
@@ -94,7 +94,7 @@ flowchart TB
     fine_albedo_output[Fused 30m Albedo]
     fine_albedo_uncertainty[Albedo Uncertainty]
 
-    SBG_L2T_STARS[SBG-TIR OTTER L2T STARS NDVI & Albedo Product]
+    SBG_L2T_STARS(SBG-TIR OTTER L2T STARS NDVI & Albedo Product)
     
     VNP09GA_I --> VIIRS_downscaling
     VNP09GA_M --> VIIRS_downscaling
