@@ -69,19 +69,24 @@ flowchart TB
     VIIRS_NDVI[VIIRS 500m NDVI]
     VIIRS_albedo[VIIRS 500m Albedo]
     VIREO_NDVI[SBG-TIR VIREO 30m NDVI]
+    VIREO_upsampled[Upsampled VIREO 60m NDVI]
 
-    Landsat_NDVI[Landsat 30m NDVI]
-    Sentinel_NDVI[Sentinel 30m NDVI]
-    fine_NDVI_input[NDVI 30m Composite]
+    Landsat_reflectance[HLS Landsat 30m Surface Reflectance]
+    Landsat_upsampled[Upsampled Landsat 60m Surface Reflectance]
+    Landsat_NDVI[Landsat 60m NDVI]
+    Sentinel_reflectance[HLS Sentinel 30m Surface Reflectance]
+    Sentenel_upsampled[Upsampled Sentinel 60m Surface Reflectance]
+    Sentinel_NDVI[Sentinel 60m NDVI]
+    fine_NDVI_input[NDVI 60m Composite]
     NDVI_covariance_prior[NDVI Fine-Coarse Covariance Prior from Previous Overpass]
     NDVI_covariance_posterior[NDVI Fine-Coarse Covariance Posterior for Next Overpass]
     NDVI_data_fusion[NDVI Data Fusion]
     fine_NDVI_output[Fused 30m NDVI]
     fine_NDVI_uncertainty[NDVI Uncertainty]
 
-    Landsat_albedo[Landsat 30m Albedo]
-    Sentinel_albedo[Sentinel 30m Albedo]
-    fine_albedo_input[Albedo 30m Composite]
+    Landsat_albedo[Landsat 60m Albedo]
+    Sentinel_albedo[Sentinel 60m Albedo]
+    fine_albedo_input[Albedo 60m Composite]
     albedo_covariance_prior[Albedo Fine-Coarse Covariance Prior from Previous Overpass]
     albedo_covariance_posterior[Albedo Fine-Coarse Covariance Posterior for Next Overpass]
     albedo_data_fusion[Albedo Data Fusion]
@@ -98,7 +103,7 @@ flowchart TB
     VIIRS_corrected --> VIIRS_NDVI
     VIIRS_corrected --> VIIRS_albedo
     
-    VIREO_NDVI --> fine_NDVI_input
+    VIREO_upsampled --> fine_NDVI_input
     Landsat_NDVI --> fine_NDVI_input
     Sentinel_NDVI --> fine_NDVI_input
     fine_NDVI_input --> NDVI_data_fusion
