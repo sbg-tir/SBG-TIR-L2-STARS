@@ -56,7 +56,7 @@ The SBG products are available at the NASA Land Processes Distribution Active Ar
 
 ```mermaid
 flowchart TB
-    classDef bigFont font-size:30px;
+    classDef bigFont font-size:60px;
 
     VIREO_NDVI(SBG-TIR VIREO 30m NDVI)
     VIREO_upsampled[Upsampled VIREO 60m NDVI]
