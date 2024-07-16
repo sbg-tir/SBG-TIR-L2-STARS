@@ -58,41 +58,41 @@ The SBG products are available at the NASA Land Processes Distribution Active Ar
 flowchart TB
     classDef bigFont font-size:60px;
 
-    VIREO_NDVI(SBG-TIR VIREO 30m NDVI)
-    VIREO_upsampled[Upsampled VIREO 60m NDVI]
+    VIREO_NDVI(SBG-TIR<br>VIREO<br>30m<br>NDVI)
+    VIREO_upsampled[Upsampled<br>VIREO<br>60m<br>NDVI]
 
-    VNP09GA_I[VNP09GA I-Band 500m Surface Reflectance]
-    VNP09GA_M[VNP09GA M-Band 1000m Surface Reflectance]
-    VIIRS_downscaling[VIIRS Downscaling]
-    VNP09GA_downscaled[Downscaled 500m VIIRS Surface Reflectance]
-    VNP43_BRDF[VNP43 BRDF Correction]
-    VIIRS_corrected[VIIRS BRDF-Corrected 500m Surface Reflectance]
-    VIIRS_NDVI[VIIRS 500m NDVI]
-    VIIRS_albedo[VIIRS 500m Albedo]
+    VNP09GA_I[VNP09GA<br>I-Band<br>500m<br>Surface<br>Reflectance]
+    VNP09GA_M[VNP09GA<br>M-Band<br>1000m<br>Surface<br>Reflectance]
+    VIIRS_downscaling[VIIRS<br>Downscaling]
+    VNP09GA_downscaled[Downscaled<br>500m<br>VIIRS<br>Surface<br>Reflectance]
+    VNP43_BRDF[VNP43<br>BRDF<br>Correction]
+    VIIRS_corrected[VIIRS<br>BRDF-Corrected<br>500m<br>Surface<br>Reflectance]
+    VIIRS_NDVI[VIIRS<br>500m<br>NDVI]
+    VIIRS_albedo[VIIRS<br>500m<br>Albedo]
 
-    Landsat_reflectance[HLS Landsat 30m Surface Reflectance]
-    Landsat_upsampled[Upsampled Landsat 60m Surface Reflectance]
-    Landsat_NDVI[Landsat 60m NDVI]
-    Sentinel_reflectance[HLS Sentinel 30m Surface Reflectance]
-    Sentinel_upsampled[Upsampled Sentinel 60m Surface Reflectance]
-    Sentinel_NDVI[Sentinel 60m NDVI]
-    fine_NDVI_input[NDVI 60m Composite]
-    NDVI_covariance_prior[NDVI Fine-Coarse Covariance Prior from Previous Overpass]
-    NDVI_covariance_posterior[NDVI Fine-Coarse Covariance Posterior for Next Overpass]
-    NDVI_data_fusion[NDVI Data Fusion]
-    fine_NDVI_output[Fused 30m NDVI]
-    fine_NDVI_uncertainty[NDVI Uncertainty]
+    Landsat_reflectance[HLS<br>Landsat<br>30m<br>Surface<br>Reflectance]
+    Landsat_upsampled[Upsampled<br>Landsat<br>60m<br>Surface<br>Reflectance]
+    Landsat_NDVI[Landsat<br>60m<br>NDVI]
+    Sentinel_reflectance[HLS<br>Sentinel<br>30m<br>Surface<br>Reflectance]
+    Sentinel_upsampled[Upsampled<br>Sentinel<br>60m<br>Surface<br>Reflectance]
+    Sentinel_NDVI[Sentinel<br>60m<br>NDVI]
+    fine_NDVI_input[NDVI<br>60m<br>Composite]
+    NDVI_covariance_prior[NDVI<br>Fine-Coarse<br>Covariance<br>Prior<br>from<br>Previous<br>Overpass]
+    NDVI_covariance_posterior[NDVI<br>Fine-Coarse<br>Covariance<br>Posterior<br>for<br>Next<br>Overpass]
+    NDVI_data_fusion[NDVI<br>Data<br>Fusion]
+    fine_NDVI_output[Fused<br>30m<br>NDVI]
+    fine_NDVI_uncertainty[NDVI<br>Uncertainty]
 
-    Landsat_albedo[Landsat 60m Albedo]
-    Sentinel_albedo[Sentinel 60m Albedo]
-    fine_albedo_input[Albedo 60m Composite]
-    albedo_covariance_prior[Albedo Fine-Coarse Covariance Prior from Previous Overpass]
-    albedo_covariance_posterior[Albedo Fine-Coarse Covariance Posterior for Next Overpass]
-    albedo_data_fusion[Albedo Data Fusion]
-    fine_albedo_output[Fused 30m Albedo]
-    fine_albedo_uncertainty[Albedo Uncertainty]
+    Landsat_albedo[Landsat<br>60m<br>Albedo]
+    Sentinel_albedo[Sentinel<br>60m<br>Albedo]
+    fine_albedo_input[Albedo<br>60m<br>Composite]
+    albedo_covariance_prior[Albedo<br>Fine-Coarse<br>Covariance<br>Prior<br>from<br>Previous<br>Overpass]
+    albedo_covariance_posterior[Albedo<br>Fine-Coarse<br>Covariance<br>Posterior<br>for<br>Next<br>Overpass]
+    albedo_data_fusion[Albedo<br>Data<br>Fusion]
+    fine_albedo_output[Fused<br>30m<br>Albedo]
+    fine_albedo_uncertainty[Albedo<br>Uncertainty]
 
-    SBG_L2T_STARS(SBG-TIR OTTER L2T STARS NDVI & Albedo Product)
+    SBG_L2T_STARS(SBG-TIR<br>OTTER<br>L2T<br>STARS<br>NDVI<br>&<br>Albedo<br>Product)
 
     VNP09GA_I --> VIIRS_downscaling
     VNP09GA_M --> VIIRS_downscaling
