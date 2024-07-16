@@ -1,5 +1,4 @@
-# SBG-TIR OTTER LST STARS NDVI & Albedo Product
-
+# SBG-TIR OTTER LST STARS NDVI & Albedo Produ
 Gregory H. Halverson (they/them)<br>
 [gregory.h.halverson@jpl.nasa.gov](mailto:gregory.h.halverson@jpl.nasa.gov)<br>
 NASA Jet Propulsion Laboratory 329G
