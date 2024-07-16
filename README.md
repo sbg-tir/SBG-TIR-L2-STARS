@@ -56,6 +56,8 @@ The SBG products are available at the NASA Land Processes Distribution Active Ar
 
 ```mermaid
 flowchart TB
+    classDef bigFont font-size:20px;
+
     VIREO_NDVI(SBG-TIR VIREO 30m NDVI)
     VIREO_upsampled[Upsampled VIREO 60m NDVI]
 
@@ -91,7 +93,7 @@ flowchart TB
     fine_albedo_uncertainty[Albedo Uncertainty]
 
     SBG_L2T_STARS(SBG-TIR OTTER L2T STARS NDVI & Albedo Product)
-    
+
     VNP09GA_I --> VIIRS_downscaling
     VNP09GA_M --> VIIRS_downscaling
     VIIRS_downscaling --> VNP09GA_downscaled
@@ -133,6 +135,8 @@ flowchart TB
     fine_NDVI_uncertainty --> SBG_L2T_STARS
     fine_albedo_output --> SBG_L2T_STARS
     fine_albedo_uncertainty --> SBG_L2T_STARS
+
+    class VIREO_NDVI,VIREO_upsampled,VNP09GA_I,VNP09GA_M,VIIRS_downscaling,VNP09GA_downscaled,VNP43_BRDF,VIIRS_corrected,VIIRS_NDVI,VIIRS_albedo,Landsat_reflectance,Landsat_upsampled,Landsat_NDVI,Sentinel_reflectance,Sentinel_upsampled,Sentinel_NDVI,fine_NDVI_input,NDVI_covariance_prior,NDVI_covariance_posterior,NDVI_data_fusion,fine_NDVI_output,fine_NDVI_uncertainty,Landsat_albedo,Sentinel_albedo,fine_albedo_input,albedo_covariance_prior,albedo_covariance_posterior,albedo_data_fusion,fine_albedo_output,fine_albedo_uncertainty,SBG_L2T_STARS bigFont;
 ```
 
 *Figure 1. Flowchart of the SBG-TIR L2T STARS processing workflow.*
