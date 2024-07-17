@@ -43,7 +43,7 @@ flowchart TB
     VNP09GA_M[VNP09GA<br>M-Band<br>1000m<br>Surface<br>Reflectance]
     VIIRS_downscaling[VIIRS<br>Downscaling]
     VNP09GA_downscaled[Downscaled<br>500m<br>VIIRS<br>Surface<br>Reflectance]
-    VNP43_BRDF[VNP43<br>BRDF<br>Correction]
+    VNP43_BRDF[VNP43NRT.jl<br>BRDF<br>Correction]
     VIIRS_corrected[VIIRS<br>BRDF-Corrected<br>500m<br>Surface<br>Reflectance]
     VIIRS_NDVI[VIIRS<br>500m<br>NDVI]
     VIIRS_albedo[VIIRS<br>500m<br>Albedo]
@@ -57,7 +57,7 @@ flowchart TB
     fine_NDVI_input[NDVI<br>60m<br>Composite]
     NDVI_covariance_prior[NDVI<br>Fine-Coarse<br>Covariance<br>Prior<br>from<br>Previous<br>Overpass]
     NDVI_covariance_posterior[NDVI<br>Fine-Coarse<br>Covariance<br>Posterior<br>for<br>Next<br>Overpass]
-    NDVI_data_fusion[NDVI<br>Data<br>Fusion]
+    NDVI_data_fusion[STARS.jl<br>NDVI<br>Data<br>Fusion]
     fine_NDVI_output[Fused<br>30m<br>NDVI]
     fine_NDVI_uncertainty[NDVI<br>Uncertainty]
 
@@ -66,7 +66,7 @@ flowchart TB
     fine_albedo_input[Albedo<br>60m<br>Composite]
     albedo_covariance_prior[Albedo<br>Fine-Coarse<br>Covariance<br>Prior<br>from<br>Previous<br>Overpass]
     albedo_covariance_posterior[Albedo<br>Fine-Coarse<br>Covariance<br>Posterior<br>for<br>Next<br>Overpass]
-    albedo_data_fusion[Albedo<br>Data<br>Fusion]
+    albedo_data_fusion[STARS.jl<br>Albedo<br>Data<br>Fusion]
     fine_albedo_output[Fused<br>30m<br>Albedo]
     fine_albedo_uncertainty[Albedo<br>Uncertainty]
 
