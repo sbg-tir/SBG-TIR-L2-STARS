@@ -48,12 +48,15 @@ flowchart TB
     VIIRS_NDVI[VIIRS<br>500m<br>NDVI]
     VIIRS_albedo[VIIRS<br>500m<br>Albedo]
 
-    Landsat_reflectance[HLS<br>Landsat<br>30m<br>Surface<br>Reflectance]
-    Landsat_upsampled[Upsampled<br>Landsat<br>60m<br>Surface<br>Reflectance]
-    Landsat_NDVI[Landsat<br>60m<br>NDVI]
-    Sentinel_reflectance[HLS<br>Sentinel<br>30m<br>Surface<br>Reflectance]
-    Sentinel_upsampled[Upsampled<br>Sentinel<br>60m<br>Surface<br>Reflectance]
-    Sentinel_NDVI[Sentinel<br>60m<br>NDVI]
+    subgraph HLS_aquisition[HLS.jl]
+        Landsat_reflectance[HLS<br>Landsat<br>30m<br>Surface<br>Reflectance]
+        Landsat_upsampled[Upsampled<br>Landsat<br>60m<br>Surface<br>Reflectance]
+        Landsat_NDVI[Landsat<br>60m<br>NDVI]
+        Sentinel_reflectance[HLS<br>Sentinel<br>30m<br>Surface<br>Reflectance]
+        Sentinel_upsampled[Upsampled<br>Sentinel<br>60m<br>Surface<br>Reflectance]
+        Sentinel_NDVI[Sentinel<br>60m<br>NDVI]
+    end
+
     fine_NDVI_input[NDVI<br>60m<br>Composite]
     NDVI_covariance_prior[NDVI<br>Fine-Coarse<br>Covariance<br>Prior<br>from<br>Previous<br>Overpass]
     NDVI_covariance_posterior[NDVI<br>Fine-Coarse<br>Covariance<br>Posterior<br>for<br>Next<br>Overpass]
