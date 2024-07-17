@@ -49,6 +49,7 @@ flowchart TB
     VIIRS_albedo[VIIRS<br>500m<br>Albedo]
 
     subgraph HLS_aquisition[HLS.jl]
+        direction TB
         Landsat_reflectance[HLS<br>Landsat<br>30m<br>Surface<br>Reflectance]
         Landsat_upsampled[Upsampled<br>Landsat<br>60m<br>Surface<br>Reflectance]
         Landsat_NDVI[Landsat<br>60m<br>NDVI]
