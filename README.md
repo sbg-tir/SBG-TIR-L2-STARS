@@ -58,6 +58,8 @@ flowchart TB
         Sentinel_reflectance[HLS<br>Sentinel<br>30m<br>Surface<br>Reflectance]
         Sentinel_upsampled[Upsampled<br>Sentinel<br>60m<br>Surface<br>Reflectance]
         Sentinel_NDVI[Sentinel<br>60m<br>NDVI]
+        Landsat_albedo[Landsat<br>60m<br>Albedo]
+        Sentinel_albedo[Sentinel<br>60m<br>Albedo]
     end
 
     subgraph bayesian_state[Bayesian State]
@@ -72,8 +74,6 @@ flowchart TB
     fine_NDVI_output[Fused<br>30m<br>NDVI]
     fine_NDVI_uncertainty[NDVI<br>Uncertainty]
 
-    Landsat_albedo[Landsat<br>60m<br>Albedo]
-    Sentinel_albedo[Sentinel<br>60m<br>Albedo]
     fine_albedo_input[Albedo<br>60m<br>Composite]
     albedo_data_fusion[STARS.jl<br>Albedo<br>Data<br>Fusion]
     fine_albedo_output[Fused<br>30m<br>Albedo]
