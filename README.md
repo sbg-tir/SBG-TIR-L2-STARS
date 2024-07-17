@@ -34,39 +34,48 @@ The data format for the SBG products is described in [SBG-TIR-L3-ET](https://git
 
 ```mermaid
 flowchart TB
-    classDef bigFont font-size:60px;
+    subgraph VIREO[SBG-TIR VIREO]
+        VIREO_NDVI(SBG-TIR<br>VIREO<br>30m<br>NDVI)
+        VIREO_upsampled[Upsampled<br>VIREO<br>60m<br>NDVI]
+    end
 
-    VIREO_NDVI(SBG-TIR<br>VIREO<br>30m<br>NDVI)
-    VIREO_upsampled[Upsampled<br>VIREO<br>60m<br>NDVI]
+    subgraph VNP43NRT[VNP43NRT.jl]
+        VNP09GA_I[VNP09GA<br>I-Band<br>500m<br>Surface<br>Reflectance]
+        VNP09GA_M[VNP09GA<br>M-Band<br>1000m<br>Surface<br>Reflectance]
+        VIIRS_downscaling[VIIRS<br>Downscaling]
+        VNP09GA_downscaled[Downscaled<br>500m<br>VIIRS<br>Surface<br>Reflectance]
+        VNP43_BRDF[VNP43NRT.jl<br>BRDF<br>Correction]
+        VIIRS_corrected[VIIRS<br>BRDF-Corrected<br>500m<br>Surface<br>Reflectance]
+        VIIRS_NDVI[VIIRS<br>500m<br>NDVI]
+        VIIRS_albedo[VIIRS<br>500m<br>Albedo]
+    end
 
-    VNP09GA_I[VNP09GA<br>I-Band<br>500m<br>Surface<br>Reflectance]
-    VNP09GA_M[VNP09GA<br>M-Band<br>1000m<br>Surface<br>Reflectance]
-    VIIRS_downscaling[VIIRS<br>Downscaling]
-    VNP09GA_downscaled[Downscaled<br>500m<br>VIIRS<br>Surface<br>Reflectance]
-    VNP43_BRDF[VNP43<br>BRDF<br>Correction]
-    VIIRS_corrected[VIIRS<br>BRDF-Corrected<br>500m<br>Surface<br>Reflectance]
-    VIIRS_NDVI[VIIRS<br>500m<br>NDVI]
-    VIIRS_albedo[VIIRS<br>500m<br>Albedo]
+    subgraph HLS_aquisition[HLS.jl]
+        direction TB
+        Landsat_reflectance[HLS<br>Landsat<br>30m<br>Surface<br>Reflectance]
+        Landsat_upsampled[Upsampled<br>Landsat<br>60m<br>Surface<br>Reflectance]
+        Landsat_NDVI[Landsat<br>60m<br>NDVI]
+        Sentinel_reflectance[HLS<br>Sentinel<br>30m<br>Surface<br>Reflectance]
+        Sentinel_upsampled[Upsampled<br>Sentinel<br>60m<br>Surface<br>Reflectance]
+        Sentinel_NDVI[Sentinel<br>60m<br>NDVI]
+        Landsat_albedo[Landsat<br>60m<br>Albedo]
+        Sentinel_albedo[Sentinel<br>60m<br>Albedo]
+    end
 
-    Landsat_reflectance[HLS<br>Landsat<br>30m<br>Surface<br>Reflectance]
-    Landsat_upsampled[Upsampled<br>Landsat<br>60m<br>Surface<br>Reflectance]
-    Landsat_NDVI[Landsat<br>60m<br>NDVI]
-    Sentinel_reflectance[HLS<br>Sentinel<br>30m<br>Surface<br>Reflectance]
-    Sentinel_upsampled[Upsampled<br>Sentinel<br>60m<br>Surface<br>Reflectance]
-    Sentinel_NDVI[Sentinel<br>60m<br>NDVI]
+    subgraph bayesian_state[Bayesian State]
+        NDVI_covariance_prior[NDVI<br>Fine-Coarse<br>Covariance<br>Prior<br>from<br>Previous<br>Overpass]
+        NDVI_covariance_posterior[NDVI<br>Fine-Coarse<br>Covariance<br>Posterior<br>for<br>Next<br>Overpass]
+        albedo_covariance_prior[Albedo<br>Fine-Coarse<br>Covariance<br>Prior<br>from<br>Previous<br>Overpass]
+        albedo_covariance_posterior[Albedo<br>Fine-Coarse<br>Covariance<br>Posterior<br>for<br>Next<br>Overpass]
+    end
+
     fine_NDVI_input[NDVI<br>60m<br>Composite]
-    NDVI_covariance_prior[NDVI<br>Fine-Coarse<br>Covariance<br>Prior<br>from<br>Previous<br>Overpass]
-    NDVI_covariance_posterior[NDVI<br>Fine-Coarse<br>Covariance<br>Posterior<br>for<br>Next<br>Overpass]
-    NDVI_data_fusion[NDVI<br>Data<br>Fusion]
+    NDVI_data_fusion[STARS.jl<br>NDVI<br>Data<br>Fusion]
     fine_NDVI_output[Fused<br>30m<br>NDVI]
     fine_NDVI_uncertainty[NDVI<br>Uncertainty]
 
-    Landsat_albedo[Landsat<br>60m<br>Albedo]
-    Sentinel_albedo[Sentinel<br>60m<br>Albedo]
     fine_albedo_input[Albedo<br>60m<br>Composite]
-    albedo_covariance_prior[Albedo<br>Fine-Coarse<br>Covariance<br>Prior<br>from<br>Previous<br>Overpass]
-    albedo_covariance_posterior[Albedo<br>Fine-Coarse<br>Covariance<br>Posterior<br>for<br>Next<br>Overpass]
-    albedo_data_fusion[Albedo<br>Data<br>Fusion]
+    albedo_data_fusion[STARS.jl<br>Albedo<br>Data<br>Fusion]
     fine_albedo_output[Fused<br>30m<br>Albedo]
     fine_albedo_uncertainty[Albedo<br>Uncertainty]
 
@@ -113,8 +122,6 @@ flowchart TB
     fine_NDVI_uncertainty --> SBG_L2T_STARS
     fine_albedo_output --> SBG_L2T_STARS
     fine_albedo_uncertainty --> SBG_L2T_STARS
-
-    class VIREO_NDVI,VIREO_upsampled,VNP09GA_I,VNP09GA_M,VIIRS_downscaling,VNP09GA_downscaled,VNP43_BRDF,VIIRS_corrected,VIIRS_NDVI,VIIRS_albedo,Landsat_reflectance,Landsat_upsampled,Landsat_NDVI,Sentinel_reflectance,Sentinel_upsampled,Sentinel_NDVI,fine_NDVI_input,NDVI_covariance_prior,NDVI_covariance_posterior,NDVI_data_fusion,fine_NDVI_output,fine_NDVI_uncertainty,Landsat_albedo,Sentinel_albedo,fine_albedo_input,albedo_covariance_prior,albedo_covariance_posterior,albedo_data_fusion,fine_albedo_output,fine_albedo_uncertainty,SBG_L2T_STARS bigFont;
 
     click VNP43_BRDF "https://github.com/STARS-Data-Fusion/VNP43NRT.jl"
     click NDVI_data_fusion "https://github.com/STARS-Data-Fusion/STARS.jl"
