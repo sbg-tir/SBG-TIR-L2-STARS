@@ -137,6 +137,8 @@ flowchart TB
     fine_albedo_uncertainty --> SBG_L2T_STARS
 
     class VIREO_NDVI,VIREO_upsampled,VNP09GA_I,VNP09GA_M,VIIRS_downscaling,VNP09GA_downscaled,VNP43_BRDF,VIIRS_corrected,VIIRS_NDVI,VIIRS_albedo,Landsat_reflectance,Landsat_upsampled,Landsat_NDVI,Sentinel_reflectance,Sentinel_upsampled,Sentinel_NDVI,fine_NDVI_input,NDVI_covariance_prior,NDVI_covariance_posterior,NDVI_data_fusion,fine_NDVI_output,fine_NDVI_uncertainty,Landsat_albedo,Sentinel_albedo,fine_albedo_input,albedo_covariance_prior,albedo_covariance_posterior,albedo_data_fusion,fine_albedo_output,fine_albedo_uncertainty,SBG_L2T_STARS bigFont;
+
+    click VNP43_BRDF "https://github.com/STARS-Data-Fusion/VNP43NRT.jl"
 ```
 
 *Figure 1. Flowchart of the SBG-TIR L2T STARS processing workflow.*
