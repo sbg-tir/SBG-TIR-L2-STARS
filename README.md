@@ -54,7 +54,7 @@ Two high-level quality flags are provided in all gridded and tiled products as t
 
 ### Product Availability
 
-The SBG products are available at the NASA Land Processes Distribution Active Archive Center (LP-DAAC), https://earthdata.nasa.gov/ and can be accessed via the Earthdata search engine. 
+The SBG products will be available at the NASA Land Processes Distribution Active Archive Center (LP-DAAC), https://earthdata.nasa.gov/ and can be accessed via the Earthdata search engine. 
 
 ## L2T STARS NDVI and Albedo Product
 
