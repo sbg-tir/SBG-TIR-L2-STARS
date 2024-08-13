@@ -30,7 +30,7 @@ Operationally, each L2T STARS tile run loads the means and covariances of the ST
 
 ## 1. Introduction to Data Products
 
-The data format for the SBG products is described in [SBG-TIR-L3-ET](https://github.com/sbg-tir/SBG-TIR-L3-ET?tab=readme-ov-file#1-introduction-to-data-products).
+The data format for the SBG products is described in the [SBG-TIR OTTER landing page](https://github.com/sbg-tir).
 
 ## 2. L2T STARS NDVI and Albedo Product
 
