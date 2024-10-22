@@ -1,0 +1,39 @@
+LogMetadata:
+  CommandLineParameters:
+    - executable_filename
+    - runconfig_filename
+    - log_filename
+
+JobIdentification:
+  ProductionLocation: ECOSTRESS Science Computing Facility
+  TaskId: urn:ecostress:L2TSTARSTask
+  ProcessingNode: processing_node
+  ProductionDateTime: production_datetime
+  JobId: job_ID
+  WorkflowInstanceId: instance_ID
+
+InputFileGroup:
+  L2T_LSTE: L2T_LSTE_filename
+  L2T_STARS_PRIOR: prior_L2T_STARS_filename
+
+StaticAncillaryFileGroup:
+  L2T_STARS_MODEL: model_directory
+  L2T_STARS_INDICES: indices_directory
+  L2T_STARS_SOURCES: sources_directory
+  L2T_STARS_WORKING: working_directory
+
+PrimaryExecutable:
+  BuildID: build_ID
+  FullPathname: executable_filename
+
+Geometry:
+  TileId: tile_ID
+  SceneId: scene_ID
+  OrbitNumber: orbit_number
+
+ProductPathGroup:
+  ProductCounter: product_counter
+  ProductPath: output_directory
+
+PGENameGroup:
+  PGEName: L2T_STARS_PGE
