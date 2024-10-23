@@ -134,7 +134,7 @@ flowchart TB
 
 *Figure 1. Flowchart of the SBG-TIR L2T STARS processing workflow.*
 
-NDVI and albedo are estimated at 60 m SBG standard resolution with uncertainty for each daytime SBG overpass by fusing temporally sparse but fine spatial resolution images from the Harmonized Landsat Sentinel (HLS) 2.0 product with daily, moderate spatial resolution images from the Suomi NPP Visible Infrared Imaging Radiometer Suite (VIIRS) VNP09GA product.
+NDVI and albedo are estimated at 60 m SBG standard resolution with uncertainty for each UTC day in which there is an SBG overpass by fusing temporally sparse but fine spatial resolution images from the Harmonized Landsat Sentinel (HLS) 2.0 product with daily, moderate spatial resolution images from the Suomi NPP Visible Infrared Imaging Radiometer Suite (VIIRS) VNP09GA product.
 
 Landsat and Sentinel surface reflectances are collected using the [HLS.jl](https://github.com/STARS-Data-Fusion/HLS.jl) package.
 
