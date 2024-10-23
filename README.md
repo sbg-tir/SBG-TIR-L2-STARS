@@ -20,6 +20,8 @@ NASA Jet Propulsion Laboratory 329G
 [claire.s.villanueva-weeks@jpl.nasa.gov](mailto:claire.s.villanueva-weeks@jpl.nasa.gov)<br>
 NASA Jet Propulsion Laboratory 329G
 
+The code for the SBG level 2 STARS PGE will be developed using open-science practices based on the [ECOSTRESS collection 2 gridded and tiled product generation software](https://github.com/ECOSTRESS-Collection-2/ECOSTRESS-Collection-2).
+
 This software will produce estimates of:
 - Normalized Difference Vegetation Index (NDVI)
 - albedo
