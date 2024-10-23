@@ -5,7 +5,7 @@ LogMetadata:
     - log_filename
 
 JobIdentification:
-  ProductionLocation: ECOSTRESS Science Computing Facility
+  ProductionLocation: SBG Science Computing Facility
   TaskId: urn:ecostress:L2TSTARSTask
   ProcessingNode: processing_node
   ProductionDateTime: production_datetime
