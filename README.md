@@ -153,3 +153,6 @@ The layers of the L2T STARS product are listed in Table 2. All layers of this pr
 
 *Table 2. Listing of L2T STARS data layers.*
 
+## References
+
+Schaaf, C. B. et al. (2017). *Algorithm Theoretical Basis Document for MODIS Bidirectional Reflectance Distribution Function and Albedo (MOD43) Products*. NASA. [Link to source](https://lpdaac.usgs.gov/documents/110/MOD43_ATBD.pdf)
