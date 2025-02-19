@@ -20,6 +20,8 @@ NASA Jet Propulsion Laboratory 329G
 [claire.s.villanueva-weeks@jpl.nasa.gov](mailto:claire.s.villanueva-weeks@jpl.nasa.gov)<br>
 NASA Jet Propulsion Laboratory 329G
 
+The code for the SBG level 2 STARS PGE will be developed using open-science practices based on the [ECOSTRESS collection 2 gridded and tiled product generation software](https://github.com/ECOSTRESS-Collection-2/ECOSTRESS-Collection-2).
+
 This software will produce estimates of:
 - Normalized Difference Vegetation Index (NDVI)
 - albedo
@@ -132,7 +134,7 @@ flowchart TB
 
 *Figure 1. Flowchart of the SBG-TIR L2T STARS processing workflow.*
 
-NDVI and albedo are estimated at 60 m SBG standard resolution with uncertainty for each daytime SBG overpass by fusing temporally sparse but fine spatial resolution images from the Harmonized Landsat Sentinel (HLS) 2.0 product with daily, moderate spatial resolution images from the Suomi NPP Visible Infrared Imaging Radiometer Suite (VIIRS) VNP09GA product.
+NDVI and albedo are estimated at 60 m SBG standard resolution with uncertainty for each UTC day in which there is an SBG overpass by fusing temporally sparse but fine spatial resolution images from the Harmonized Landsat Sentinel (HLS) 2.0 product with daily, moderate spatial resolution images from the Suomi NPP Visible Infrared Imaging Radiometer Suite (VIIRS) VNP09GA product.
 
 Landsat and Sentinel surface reflectances are collected using the [HLS.jl](https://github.com/STARS-Data-Fusion/HLS.jl) package.
 
@@ -151,3 +153,6 @@ The layers of the L2T STARS product are listed in Table 2. All layers of this pr
 
 *Table 2. Listing of L2T STARS data layers.*
 
+## References
+
+Schaaf, C. B. et al. (2017). *Algorithm Theoretical Basis Document for MODIS Bidirectional Reflectance Distribution Function and Albedo (MOD43) Products*. NASA. [Link to source](https://lpdaac.usgs.gov/documents/110/MOD43_ATBD.pdf)
