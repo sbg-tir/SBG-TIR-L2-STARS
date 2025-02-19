@@ -37,7 +37,7 @@ logger = logging.getLogger(__name__)
 
 def install_VNP43NRT_jl(
     package_location: str = "https://github.com/STARS-Data-Fusion/VNP43NRT.jl",
-    environment_name: str = "@ECOv002-L2T-STARS"):
+    environment_name: str = "@SBGv001-L2T-STARS"):
     """
     Installs the VNP43NRT.jl package from GitHub into a shared environment.
 
@@ -45,7 +45,7 @@ def install_VNP43NRT_jl(
         github_url: The URL of the GitHub repository containing VNP43NRT.jl.
             Defaults to "https://github.com/STARS-Data-Fusion/VNP43NRT.jl".
         environment_name: The name of the shared Julia environment to install the
-            package into. Defaults to "@ECOv002-L2T-STARS".
+            package into. Defaults to "@SBGv001-L2T-STARS".
 
     Returns:
         A CompletedProcess object containing information about the execution of the Julia command.

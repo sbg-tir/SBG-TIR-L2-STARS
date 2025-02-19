@@ -12,7 +12,7 @@
     </group>
     <group name="JobIdentification">
         <scalar name="ProductionLocation">ECOSTRESS Science Computing Facility</scalar>
-        <scalar name="TaskId">urn:ecostress:L2GL2TLSTETask</scalar>
+        <scalar name="TaskId">urn:ecostress:L2TSTARSTask</scalar>
         <scalar name="ProcessingNode">processing_node</scalar>
         <scalar name="ProductionDateTime">production_datetime</scalar>
         <scalar name="JobId">job_ID</scalar>

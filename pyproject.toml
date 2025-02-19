@@ -3,7 +3,7 @@ requires = ["setuptools>=60", "setuptools-scm>=8.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "ECOv003_L2T_STARS"
+name = "SBGv001_L2T_STARS"
 version = "1.0.1"
 description = "ECOSTRESS Collection 3 JPL STARS Data Fusion Product Generating Executable (PGE)"
 readme = "README.md"
@@ -16,8 +16,8 @@ classifiers = [
 ]
 dependencies = [
     "colored-logging",
-    "ECOv002-granules",
-    "ECOv002-CMR>=1.0.4",
+    "SBGv001-granules",
+    "SBGv001-CMR>=1.0.4",
     "pandas",
     "pillow",
     "geopandas",
@@ -58,11 +58,11 @@ dev = [
 ]
 
 [tool.setuptools.package-data]
-ECOv003_L2T_STARS = ["*.*"]
+SBGv001_L2T_STARS = ["*.*"]
 
 [project.urls]
-"Homepage" = "https://github.com/ECOSTRESS-Collection-3/ECOv003-L2T-STARS"
+"Homepage" = "https://github.com/ECOSTRESS-Collection-3/SBGv001-L2T-STARS"
 
 [tool.setuptools.packages.find]
-include = ["ECOv003_L2T_JET"]
+include = ["SBGv001_L2T_JET"]
 exclude = []

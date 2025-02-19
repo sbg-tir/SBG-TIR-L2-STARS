@@ -26,7 +26,7 @@ from harmonized_landsat_sentinel import HLSLandsatMissing, HLSSentinelMissing, H
 from harmonized_landsat_sentinel import HLSTileNotAvailable, HLSSentinelNotAvailable, HLSLandsatNotAvailable, HLSDownloadFailed, HLSNotAvailable
 from harmonized_landsat_sentinel import HLSBandNotAcquired, HLS2CMR, CMR_SEARCH_URL
 
-from ECOv002_granules import L2TLSTE, L2TSTARS, NDVI_COLORMAP, ALBEDO_COLORMAP
+from SBGv001_granules import L2TLSTE, L2TSTARS, NDVI_COLORMAP, ALBEDO_COLORMAP
 
 from .LPDAAC.LPDAACDataPool import LPDAACServerUnreachable
 
@@ -155,7 +155,7 @@ def generate_L2T_STARS_runconfig(
 
     logger.info(f"started generating L2T_STARS run-config for tile {tile} on date {date_UTC}")
 
-    pattern = join(working_directory, f"ECOv002_L2T_STARS_{tile}_*_{build}_*.xml")
+    pattern = join(working_directory, f"SBGv001_L2T_STARS_{tile}_*_{build}_*.xml")
     logger.info(f"scanning for previous run-configs: {cl.val(pattern)}")
     previous_runconfigs = glob(pattern)
     previous_runconfig_count = len(previous_runconfigs)
@@ -180,7 +180,7 @@ def generate_L2T_STARS_runconfig(
         product_counter = 1
 
     timestamp = f"{time_UTC:%Y%m%d}"
-    granule_ID = f"ECOv002_L2T_STARS_{tile}_{timestamp}_{build}_{product_counter:02d}"
+    granule_ID = f"SBGv001_L2T_STARS_{tile}_{timestamp}_{build}_{product_counter:02d}"
 
     if runconfig_filename is None:
         runconfig_filename = join(
@@ -350,7 +350,7 @@ class L2TSTARSConfig(ECOSTRESSRunConfig):
 
             if "InputFileGroup" not in runconfig:
                 raise MissingRunConfigValue(
-                    f"missing InputFileGroup in L2G_L2T_LSTE run-config: {filename}")
+                    f"missing InputFileGroup in L2T_LSTE run-config: {filename}")
 
             if "L2T_LSTE" not in runconfig["InputFileGroup"]:
                 raise MissingRunConfigValue(
@@ -411,7 +411,7 @@ class L2TSTARSConfig(ECOSTRESSRunConfig):
             L2T_LSTE_granule = L2TLSTE(L2T_LSTE_filename)
             time_UTC = L2T_LSTE_granule.time_UTC
 
-            granule_ID = f"ECOv002_L2T_STARS_{tile}_{time_UTC:%Y%m%d}_{build}_{product_counter:02d}"
+            granule_ID = f"SBGv001_L2T_STARS_{tile}_{time_UTC:%Y%m%d}_{build}_{product_counter:02d}"
 
             L2T_STARS_granule_directory = join(output_directory, granule_ID)
             L2T_STARS_zip_filename = f"{L2T_STARS_granule_directory}.zip"
@@ -548,7 +548,7 @@ def generate_model_state_tile_date_directory(model_directory: str, tile: str, da
 
 def install_STARS_jl(
     github_URL: str = "https://github.com/STARS-Data-Fusion/STARS.jl",
-    environment_name: str = "@ECOv002-L2T-STARS"):
+    environment_name: str = "@SBGv001-L2T-STARS"):
     """
     Installs the STARS.jl package from GitHub into a specified environment.
 
@@ -556,7 +556,7 @@ def install_STARS_jl(
         github_url: The URL of the GitHub repository containing STARS.jl.
             Defaults to "https://github.com/STARS-Data-Fusion/STARS.jl".
         environment_name: The name of the Julia environment to install the package into.
-            Defaults to "ECOv002-L2T-STARS".
+            Defaults to "SBGv001-L2T-STARS".
 
     Returns:
         A CompletedProcess object containing information about the execution of the Julia command.
@@ -623,7 +623,7 @@ def process_julia_data_fusion(
         prior_UQ_filename: str = None,
         prior_bias_filename: str = None,
         prior_bias_UQ_filename: str = None,
-        environment_name: str = "@ECOv002-L2T-STARS",
+        environment_name: str = "@SBGv001-L2T-STARS",
         threads: Union[int, str] = "auto"):
     julia_script_filename = join(abspath(dirname(__file__)), "process_ECOSTRESS_data_fusion.jl")
     STARS_source_directory = join(abspath(dirname(__file__)), "STARS_jl")
@@ -1376,7 +1376,7 @@ def L2T_STARS(
         remove_posterior: bool = True,
         threads: Union[int, str] = "auto") -> int:
     """
-    ECOSTRESS Collection 2 L2G L2T LSTE PGE
+    SBG-TIR OTTER Collection 1 L2T STARS PGE
     :param runconfig_filename: filename for XML run-config
     :param log_filename: filename for logger output
     :return: exit code number
