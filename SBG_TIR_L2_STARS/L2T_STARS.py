@@ -350,7 +350,7 @@ class L2TSTARSConfig(ECOSTRESSRunConfig):
 
             if "InputFileGroup" not in runconfig:
                 raise MissingRunConfigValue(
-                    f"missing InputFileGroup in L2G_L2T_LSTE run-config: {filename}")
+                    f"missing InputFileGroup in L2T_LSTE run-config: {filename}")
 
             if "L2T_LSTE" not in runconfig["InputFileGroup"]:
                 raise MissingRunConfigValue(
@@ -1376,7 +1376,7 @@ def L2T_STARS(
         remove_posterior: bool = True,
         threads: Union[int, str] = "auto") -> int:
     """
-    ECOSTRESS Collection 2 L2G L2T LSTE PGE
+    SBG-TIR OTTER Collection 1 L2T STARS PGE
     :param runconfig_filename: filename for XML run-config
     :param log_filename: filename for logger output
     :return: exit code number
