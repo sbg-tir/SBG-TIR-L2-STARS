@@ -1,0 +1,68 @@
+[build-system]
+requires = ["setuptools>=60", "setuptools-scm>=8.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ECOv003_L2T_STARS"
+version = "1.0.1"
+description = "ECOSTRESS Collection 3 JPL STARS Data Fusion Product Generating Executable (PGE)"
+readme = "README.md"
+authors = [
+    { name = "Gregory H. Halverson", email = "gregory.h.halverson@jpl.nasa.gov" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "colored-logging",
+    "ECOv002-granules",
+    "ECOv002-CMR>=1.0.4",
+    "pandas",
+    "pillow",
+    "geopandas",
+    "geos5fp",
+    "harmonized-landsat-sentinel>=1.1.0",
+    "h5py",
+    "matplotlib",
+    "modland",
+    "msgpack",
+    "msgpack_numpy",
+    "netCDF4",
+    "numpy",
+    "pyproj",
+    "rasterio",
+    "shapely",
+    "scikit-image",
+    "affine",
+    "astropy",
+    "pycksum",
+    "pykdtree",
+    "pyresample",
+    "rasters",
+    "scikit-learn",
+    "scipy",
+    "sentinel-tiles",
+    "six",
+    "tensorflow",
+    "untangle",
+    "xmltodict"
+]
+
+requires-python = ">=3.11"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov",
+]
+
+[tool.setuptools.package-data]
+ECOv003_L2T_STARS = ["*.*"]
+
+[project.urls]
+"Homepage" = "https://github.com/ECOSTRESS-Collection-3/ECOv003-L2T-STARS"
+
+[tool.setuptools.packages.find]
+include = ["ECOv003_L2T_JET"]
+exclude = []
