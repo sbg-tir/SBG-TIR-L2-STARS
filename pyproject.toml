@@ -3,9 +3,9 @@ requires = ["setuptools>=60", "setuptools-scm>=8.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "SBGv001_L2T_STARS"
-version = "1.0.1"
-description = "ECOSTRESS Collection 3 JPL STARS Data Fusion Product Generating Executable (PGE)"
+name = "SBGv001-L2T-STARS"
+version = "1.1.0"
+description = "SBG Collection 3 JPL STARS Data Fusion Product Generating Executable (PGE)"
 readme = "README.md"
 authors = [
     { name = "Gregory H. Halverson", email = "gregory.h.halverson@jpl.nasa.gov" },
@@ -16,6 +16,7 @@ classifiers = [
 ]
 dependencies = [
     "colored-logging",
+    "SBGv001-exit-codes",
     "SBGv001-granules",
     "SBGv001-CMR>=1.0.4",
     "pandas",
@@ -49,20 +50,24 @@ dependencies = [
     "xmltodict"
 ]
 
-requires-python = ">=3.11"
+requires-python = ">=3.10"
 
 [project.optional-dependencies]
 dev = [
+    "build",
     "pytest>=6.0",
     "pytest-cov",
+    "jupyter",
+    "pytest",
+    "twine"
 ]
 
 [tool.setuptools.package-data]
 SBGv001_L2T_STARS = ["*.*"]
 
 [project.urls]
-"Homepage" = "https://github.com/ECOSTRESS-Collection-3/SBGv001-L2T-STARS"
+"Homepage" = "https://github.com/sbg-tir/SBG-TIR-L2T-STARS"
 
 [tool.setuptools.packages.find]
-include = ["SBGv001_L2T_JET"]
+include = ["SBGv001_L2T_STARS"]
 exclude = []

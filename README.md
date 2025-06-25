@@ -2,7 +2,7 @@
 
 This is the main repository for the Suface Biology and Geology Thermal Infrared (SBG-TIR) STARS NDVI and albedo data product. This product will utilize the [Spatial Timeseries for Automated high-Resolution multi-Sensor (STARS)](https://github.com/STARS-Data-Fusion) data fusion system to produce normalized difference vegetation index (NDVI) and albedo estimates corresponding to SBG-TIR OTTER surface temperature measurements, to support the [evapotranspiration product](https://github.com/sbg-tir/SBG-TIR-L3-ET).
 
-The SBG collection 1 level 2 vegetation index and albedo data product is being developed based on the [ECOsystem Spaceborne Thermal Radiometer Experiment on Space Station (ECOSTRESS) collection 3 level 2 vegetation index and albedo data product](https://github.com/ECOSTRESS-Collection-3/SBGv001-L2-STARS).
+The SBG collection 1 level 2 vegetation index and albedo data product is being developed based on the [ECOsystem Spaceborne Thermal Radiometer Experiment on Space Station (SBG) collection 3 level 2 vegetation index and albedo data product](https://github.com/SBG-Collection-3/SBGv001-L2-STARS).
 
 [Gregory H. Halverson](https://github.com/gregory-halverson-jpl) (they/them)<br>
 [gregory.h.halverson@jpl.nasa.gov](mailto:gregory.h.halverson@jpl.nasa.gov)<br>
@@ -20,7 +20,7 @@ NASA Jet Propulsion Laboratory 329G
 [claire.s.villanueva-weeks@jpl.nasa.gov](mailto:claire.s.villanueva-weeks@jpl.nasa.gov)<br>
 NASA Jet Propulsion Laboratory 329G
 
-The code for the SBG level 2 STARS PGE will be developed using open-science practices based on the [ECOSTRESS collection 2 gridded and tiled product generation software](https://github.com/ECOSTRESS-Collection-2/ECOSTRESS-Collection-2).
+The code for the SBG level 2 STARS PGE will be developed using open-science practices based on the [SBG collection 2 gridded and tiled product generation software](https://github.com/SBG-Collection-2/SBG-Collection-2).
 
 This software will produce estimates of:
 - Normalized Difference Vegetation Index (NDVI)
